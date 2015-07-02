@@ -1,11 +1,10 @@
 // Function to draw your map
-var drawMap() = function() {
-  var map = L.map('container');
-  map.setView([34,-100],10);
+var drawMap = function() {
+  var map = L.map('container').setView[34, -100], 10);
   var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
   layer.addTo(map);
 
-  // Create map and set viewd
+  // Create map and set view
 
 
   // Create an tile layer variable using the appropriate url
@@ -13,7 +12,8 @@ var drawMap() = function() {
   // Add the layer to your map
 
 
-  // Execute your function to get data
+  getData();
+  window.onload = cookiefix;
 
 }
 

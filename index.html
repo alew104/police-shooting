@@ -12,9 +12,11 @@
   </head>
 
   <body>
-    <div id="container" style="width:500px; height:500px;"></div>
+    <div id= "container" style = "width:500px; height:500px;"></div>
     <script>
-            map.drawMap();
+    var map = L.map('container').setView[34, -100], 10);
+    var layer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png');
+    layer.addTo(map);
     	// This is where you should execute your drawMap function //
 
     </script>
