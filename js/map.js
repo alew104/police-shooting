@@ -36,30 +36,35 @@ var customBuild = function() {
           var longitude = d.lng;
           var date = d['Date Searched'];
           var armed = d['Armed or Unarmed?'];
-          var age = d.Age;
+          var age = d["Victim's Age"];
           var weapon = d.Weapon;
+          console.log(age);
           var hok = d['Hit or Killed?'];
           var gender = d["Victim's Gender"];
+          console.log(hok);
               ageKilled(longitude, latitude, age, weapon, gender);
         });
 
 }
 
 function ageKilled (longitude, latitude, age, weapon, gender){
+    if (age == undefined){
+      age = 0;
+    }
     if (age < 18){
       if (gender == 'Male'){
-        var circle = new L.circle([latitude, longitude], 1000,
+        var circle = new L.circle([latitude, longitude], age * 100,
               {color:'blue', opacity:0.5});
       } else {
-        var circle = new L.circle([latitude, longitude], 1000,
+        var circle = new L.circle([latitude, longitude], age * 100,
               {color:'red', opacity:0.5});
       }
     } else {
       if (gender == 'Male'){
-        var circle = new L.circle([latitude, longitude], 500,
+        var circle = new L.circle([latitude, longitude], age * 30,
               {color:'blue', opacity:0.5});
       } else {
-        var circle = new L.circle([latitude, longitude], 500,
+        var circle = new L.circle([latitude, longitude], age * 30,
               {color:'red', opacity:0.5});
       }
     }
